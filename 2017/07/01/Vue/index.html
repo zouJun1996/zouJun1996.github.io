@@ -564,6 +564,22 @@
   </div>
 
 
+  <div id="container"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+  var gitment = new Gitment({
+    owner: 'zouJun1996',
+    repo: 'blogComment',
+    oauth: {
+      client_id: 'bd8c77ccef205cb06cff',
+      client_secret: '5ac7d605cc0f2c908d59ac352b787f2bf42fff3a',
+    },
+  })
+  gitment.render('container')
+  </script>
+
+
           </div>
           
 
@@ -745,7 +761,6 @@
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-
 
 
 
