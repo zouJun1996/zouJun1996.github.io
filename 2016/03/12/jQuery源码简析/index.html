@@ -60,22 +60,20 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
 
 
 
 
 
-  <meta name="keywords" content="jQuery,技术,">
+
+  <meta name="keywords" content="jQuery,">
 
 
 
@@ -87,16 +85,16 @@
 
 
 <meta name="description" content="对jQ的源码做了一些了解，在这里简单实现一下。">
-<meta name="keywords" content="jQuery,技术">
+<meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery的简单实现">
-<meta property="og:url" content="http://yoursite.com/2016/03/12/jQuery的简单实现/index.html">
+<meta property="og:title" content="jQuery源码简析">
+<meta property="og:url" content="http://yoursite.com/2016/03/12/jQuery源码简析/index.html">
 <meta property="og:site_name" content="Por una Cabeza">
 <meta property="og:description" content="对jQ的源码做了一些了解，在这里简单实现一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-11T09:58:23.684Z">
+<meta property="og:updated_time" content="2019-04-12T08:59:12.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery的简单实现">
+<meta name="twitter:title" content="jQuery源码简析">
 <meta name="twitter:description" content="对jQ的源码做了一些了解，在这里简单实现一下。">
 
 
@@ -127,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/03/12/jQuery的简单实现/">
+  <link rel="canonical" href="http://yoursite.com/2016/03/12/jQuery源码简析/">
 
 
 
 
 
-  <title>jQuery的简单实现 | Por una Cabeza</title>
+  <title>jQuery源码简析 | Por una Cabeza</title>
   
 
 
@@ -314,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/12/jQuery的简单实现/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/12/jQuery源码简析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Evan">
@@ -331,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jQuery的简单实现</h1>
+          <h1 class="post-title" itemprop="name headline">jQuery源码简析</h1>
         
 
         <div class="post-meta">
@@ -366,8 +364,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Diary/" itemprop="url" rel="index">
-                    <span itemprop="name">Diary</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -459,7 +457,7 @@
 <p>实现了 for 循环和 for-in循环的重用</p>
 <h2 id="type-方法的实现"><a href="#type-方法的实现" class="headerlink" title="type 方法的实现"></a>type 方法的实现</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> toString = <span class="built_in">Object</span>.prototype.toString;</span><br><span class="line"> <span class="keyword">var</span> class2type = &#123;&#125;;</span><br><span class="line"> <span class="keyword">var</span> types = <span class="string">"Number String Boolean Math Date Function Array RegExp"</span>.split(<span class="string">" "</span>);</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; types.length; i++) &#123;</span><br><span class="line">	<span class="keyword">var</span> type = types[i];</span><br><span class="line">	class2type[<span class="string">"[object "</span> + type + <span class="string">"]"</span>] = type.toLowerCase();</span><br><span class="line">&#125;</span><br><span class="line"> jQuery.extend(&#123;</span><br><span class="line">   type: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> data==<span class="literal">null</span> ? data : class2type[toString.call(data)];</span><br><span class="line">	&#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="工具类方法"><a href="#工具类方法" class="headerlink" title="工具类方法"></a>工具类方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> toString = <span class="built_in">Object</span>.prototype.toString;</span><br><span class="line"> <span class="keyword">var</span> class2type = &#123;&#125;;</span><br><span class="line"> <span class="keyword">var</span> types = <span class="string">"Number String Boolean Math Date Function Array RegExp"</span>.split(<span class="string">" "</span>);</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; types.length; i++) &#123;</span><br><span class="line">	<span class="keyword">var</span> type = types[i];</span><br><span class="line">	class2type[<span class="string">"[object "</span> + type + <span class="string">"]"</span>] = type.toLowerCase();</span><br><span class="line">&#125;</span><br><span class="line"> jQuery.extend(&#123;</span><br><span class="line">   type: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> data == <span class="literal">null</span> ? data : class2type[toString.call(data)];</span><br><span class="line">	&#125;,</span><br><span class="line">   isString: <span class="function"><span class="keyword">function</span> (<span class="params">str</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">return</span> jQuery.type(str) === <span class="string">"string"</span>;</span><br><span class="line">   &#125;,</span><br><span class="line">   isFunction: <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">return</span> jQuery.type(str) === <span class="string">"function"</span>;</span><br><span class="line">   &#125;,</span><br><span class="line">   isArray: <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>)</span>&#123;</span><br><span class="line">     <span class="comment">//	判断是不是数组的时候需要注意，ES5 中新增了 Array.isArray() 内置方法，所以应该优先使用这个内置方法，那么就要进行能力检测。</span></span><br><span class="line">     <span class="keyword">return</span> <span class="built_in">Array</span>.isArray ? <span class="built_in">Array</span>.isArray(arr) : jQuery.type(arr) === <span class="string">"array"</span>;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
-<p>关于jQuery内部函数方法的封装就到这里。完整的代码请参考</p>
+<p>大致原理大概是这样，这里就写到这，具体源码可参考官网。</p>
 
       
     </div>
@@ -478,8 +476,6 @@
         <div class="post-tags">
           
             <a href="/tags/jQuery/" rel="tag"># jQuery</a>
-          
-            <a href="/tags/技术/" rel="tag"># 技术</a>
           
         </div>
       
@@ -605,7 +601,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

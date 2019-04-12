@@ -60,16 +60,14 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
 
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
@@ -94,7 +92,7 @@
 <meta property="og:site_name" content="Por una Cabeza">
 <meta property="og:description" content="web app 之 rem">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-06T08:44:47.727Z">
+<meta property="og:updated_time" content="2019-04-12T09:34:17.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于rem">
 <meta name="twitter:description" content="web app 之 rem">
@@ -354,6 +352,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -443,7 +463,7 @@
 <p>这个表格的表现出来的数字其实就已经很明显了。</p>
 <p>比如：<br>因为设计稿是640的，那么上面宽度为200px的元素，其页面显示的大小应该也是200px；<br>那么在384的页面中，页面显示相同的元素，其宽度应该变成 200*(384/640) px；</p>
 <p>384/640 = 0.6，384是640的0.6倍，<br>所以384页面宽度下的font-size也等于640页面宽度下的0.6倍，<br>这时384的font-size就等于12px。在不同设备的宽度计算方式以此类推。</p>
-<h2 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h2><p>其实 rem 这个东西对于移动端开发来说简直就是一个福音，因为在传统的移动端开发来说的话，各种方式都会有一定的弊端</p>
+<h2 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h2><p>rem 这个东西对于移动端开发来说简直就是一个福音，因为在传统的移动端开发来说的话，各种方式都会有一定的弊端</p>
 <ul>
 <li><p>流式布局的话通过百分比来定义宽度，但是高度的话往往是用px来定住，这个时候在大屏幕的手机下显示效果会变成有些页面元素宽度被拉的很长，但是高度还是和原来一样，十分不协调。</p>
 </li>
@@ -456,6 +476,7 @@
 </ul>
 <p>rem则是可以做到全设备，全尺寸的等比例适配。</p>
 <p><strong>根据屏幕宽度的不同，用js判断或者使用css3中的媒体查询设定不同屏幕宽度下根元素的字体大小。做到全设备的自适应。</strong></p>
+<p>目前比较流行的解决方案可能就是淘宝的<a href="https://github.com/amfe/lib-flexible/" target="_blank" rel="noopener">lib-flexible</a></p>
 
       
     </div>
@@ -603,7 +624,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
