@@ -620,25 +620,25 @@
 
   </div>
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+     <script type="text/javascript">
+          var gitalk = new Gitalk({
+            clientID: '',
+            clientSecret: '',
+            repo: 'zouJun1996.github.io',
+            owner: '',
+            admin: [''],
 
-   <script type="text/javascript">
-        var gitalk = new Gitalk({
-          clientID: '',
-          clientSecret: '',
-          repo: 'zouJun1996.github.io',
-          owner: '',
-          admin: [''],
+            id: md5(location.pathname),
 
-          id: md5(location.pathname),
-
-          distractionFreeMode: ''
-        })
-        gitalk.render('gitalk-container')
-    </script>
-
+            distractionFreeMode: ''
+          })
+          gitalk.render('gitalk-container')
+      </script>
+  
 
 
           </div>
@@ -963,7 +963,7 @@
     
       language: window.navigator.language || window.navigator.userLanguage,
     
-    distractionFreeMode: 'false'
+    distractionFreeMode: 'true'
   });
   gitalk.render('gitalk-container');
 </script>
